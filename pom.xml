@@ -60,12 +60,14 @@
 
 	<distributionManagement>
 		<repository>
-    		<id>releases</id>
+			<id>>myteam-nexus</id>
+    		<name>releases</name>
     		<url>http://admin:2335Cube!@54.65.27.207:8081/repository/maven-releases/</url>
 <!--     		<url>http://admin:2335Cube!@54.65.27.207:8081/nexus/content/repositories/maven-releases/</url>  -->
   		</repository>
    		<snapshotRepository>
-    		<id>snapshots</id>
+			<id>>myteam-nexus</id>
+    		<name>snapshots</name>
     		<url>http://admin:2335Cube!@54.65.27.207:8081/repository/maven-snapshots/</url>
 <!--      		<url>http://admin:2335Cube!@54.65.27.207:8081/nexus/content/repositories/maven-snapshots/</url>  -->
   		</snapshotRepository>
