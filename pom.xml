@@ -32,12 +32,11 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
  			<version>5.1.47</version>
-
-<!-- mavenのローカルリポジトリに登録 -->
-<!--   			<scope>runtime</scopeslack>-->
-<!--   			<scope>system</scope>
+			<!-- 最新版を取得する -->
+			<!--  <scope>runtime</scopeslack>-->
+			<!-- mavenのローカルリポジトリに登録 -->
+			<!--  <scope>system</scope>
 			<systemPath>${JAVA_HOME}/lib/mysql-connector-java-5.1.47-bin.jar</systemPath>-->
-
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
