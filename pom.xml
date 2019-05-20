@@ -79,23 +79,17 @@
 		            </execution>
         		</executions>
     		</plugin>
-
-			<!-- add findBugs -->
-		   	<plugin>
-       			<groupId>org.codehaus.mojo</groupId>
-       			<artifactId>findbugs-maven-plugin</artifactId>
-       			<version>3.0.5</version>
-		   	</plugin>
     	</plugins>
-
 	</build>
 
 	<!-- reporting設定 -->
 	<reporting>
     	<plugins>
+			<!-- add findBugs -->
        		<plugin>
            		<groupId>org.codehaus.mojo</groupId>
            		<artifactId>findbugs-maven-plugin</artifactId>
+       			<version>3.0.5</version>
            		<configuration>
                		<xmlOutput>true</xmlOutput>
                		<xmlOutputDirectory>target/site</xmlOutputDirectory>
