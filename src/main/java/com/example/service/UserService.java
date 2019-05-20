@@ -15,53 +15,53 @@ import com.example.repository.UsersRepository;
 @Service
 @Transactional
 public class UserService {
-	@Autowired
-	UsersRepository usersRepository;
+    @Autowired
+    UsersRepository usersRepository;
 
-	/**
-	* メンバー一覧取得サービス
-	* @return List<user>
-	*/	
-	@CrossOrigin
-	public List<User> findAll() {
-		return usersRepository.findAll();
-	}
+    /*
+    * メンバー一覧取得サービス
+    * @return List<user>
+    */
+    @CrossOrigin
+    public List<User> findAll() {
+        return usersRepository.findAll();
+    }
 
-	/**
-	* メンバー取得サービス
-	* @return List<user>
-	*/	
-	@CrossOrigin
-	public Optional<User> findById(Integer id) {
-		return usersRepository.findById(id);
-	}
+    /*
+    * メンバー取得サービス
+    * @return List<user>
+    */
+    @CrossOrigin
+    public Optional<User> findById(Integer id) {
+        return usersRepository.findById(id);
+    }
 
-	/**
-	*メンバー登録サービス
-	* @param user
-	* @return user
-	*/
-	@CrossOrigin
-	public User create(User user) {
-		return usersRepository.save(user);
-	}
+    /*
+    *メンバー登録サービス
+    * @param user
+    * @return user
+    */
+    @CrossOrigin
+    public User create(User user) {
+        return usersRepository.save(user);
+    }
 
-	/**
-	 * メンバー削除サービス
-	 * @param id
-	 */
-	@CrossOrigin
-	public void delete(Integer id) {
-		usersRepository.deleteById(id);
-	}
+    /*
+     * メンバー削除サービス
+     * @param id
+     */
+    @CrossOrigin
+    public void delete(Integer id) {
+        usersRepository.deleteById(id);
+    }
 
-	/**
-	 * メンバー更新サービス
-	 * @param user
-	 * @return user
-	 */
-	@CrossOrigin
-	public User update(User user) {
-		return usersRepository.save(user);
-	}
+    /*
+     * メンバー更新サービス
+     * @param user
+     * @return user
+     */
+    @CrossOrigin
+    public User update(User user) {
+        return usersRepository.save(user);
+    }
 }
