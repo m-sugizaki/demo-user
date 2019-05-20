@@ -45,7 +45,7 @@ public class UserServiceTests {
     }
 
     @Test
-    public void findById() {
+    public void メンバー詳細() {
         when(this.usersRepository.findById(TEST_ID)).thenReturn(this.testUser);
         Optional<User> actual = this.userService.findById(TEST_ID);
         assertThat(actual).isEqualTo(this.testUser);
@@ -53,7 +53,7 @@ public class UserServiceTests {
     }
 
     @Test
-    public void save() {
+    public void メンバー更新() {
         when(this.usersRepository.save(this.testUser2)).thenReturn(this.testUser2);
         User actual = this.userService.update(this.testUser2);
         assertThat(actual).isEqualTo(this.testUser2);

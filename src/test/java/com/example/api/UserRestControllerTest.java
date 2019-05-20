@@ -17,6 +17,8 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.RequestBuilder;
+import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
@@ -46,7 +48,7 @@ public class UserRestControllerTest{
      * @throws Exception
      */
     @Test
-    public void testSampleTest1() throws Exception {
+    public void メンバー詳細() throws Exception {
     	
     	Integer id;
     	id = 1;
@@ -58,5 +60,16 @@ public class UserRestControllerTest{
             .andExpect(jsonPath("id", is(1)))
             .andExpect(jsonPath("name", is("杉崎　睦")))
             .andExpect(jsonPath("pass", is("sugisugi")));
+    }
+
+    @Test
+    public void メンバー一覧() throws Exception {
+    	// 実行し、値を検証
+        mvc.perform(get("/users/"))
+            .andExpect(status().isOk());
+//            .andExpect(content().contentType(APPLICATION_JSON_UTF8))
+//            .andExpect(jsonPath("id", is(1)))
+//            .andExpect(jsonPath("name", is("杉崎　睦")))
+//            .andExpect(jsonPath("pass", is("sugisugi")));
     }
 }

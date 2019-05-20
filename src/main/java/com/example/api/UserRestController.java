@@ -29,8 +29,8 @@ public class UserRestController {
      * メンバー一覧取得API
      * @return List<user>
      */
-	@CrossOrigin
-	@GetMapping
+    @CrossOrigin
+    @GetMapping
     List<User> getUsers() {
         List<User> customers = userService.findAll();
         return customers;
@@ -40,8 +40,8 @@ public class UserRestController {
      * メンバー取得API
      * @return List<user>
      */
-	@CrossOrigin
-	@GetMapping(path = "{id}")
+    @CrossOrigin
+    @GetMapping(path = "{id}")
     User getUser(@PathVariable Integer id) {
         Optional<User> customers = userService.findById(id);
 //        User customers = userService.findById(id);
@@ -53,35 +53,35 @@ public class UserRestController {
      * @param user
      * @return user
      */
-	@CrossOrigin
-	@PostMapping
+    @CrossOrigin
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     User postUser(@RequestBody User user) {
-    	return userService.create(user);
+        return userService.create(user);
     }
 
     /**
-     * 商品削除API
+     * メンバー削除API
      * @param id
      */
-	@CrossOrigin
-	@DeleteMapping(path = "{id}")
+    @CrossOrigin
+    @DeleteMapping(path = "{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     void deleteUser(@PathVariable Integer id) {
-    	userService.delete(id);
+        userService.delete(id);
     }
 
     /**
-     * 商品更新API
+     * メンバー更新API
      * @param id
      * @param item
      * @return item
      */
-	@CrossOrigin
-	@PutMapping(path = "{id}")
+    @CrossOrigin
+    @PutMapping(path = "{id}")
     User putUser(@PathVariable Integer id, @RequestBody User user) {
-    	user.setId(id);
-    	return userService.update(user);
+        user.setId(id);
+        return userService.update(user);
     }
     
 }
