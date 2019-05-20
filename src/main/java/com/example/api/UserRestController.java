@@ -22,66 +22,65 @@ import com.example.service.UserService;
 @RestController
 @RequestMapping("users")
 public class UserRestController {
-    @Autowired
-    UserService userService;
+  @Autowired
+  UserService userService;
     
-    /**
-     * メンバー一覧取得API
-     * @return List<user>
-     */
-    @CrossOrigin
-    @GetMapping
-    List<User> getUsers() {
-        List<User> customers = userService.findAll();
-        return customers;
-    }
+  /*
+   * メンバー一覧取得API
+   * @return List<user>
+   */
+  @CrossOrigin
+  @GetMapping
+  List<User> getUsers() {
+    List<User> customers = userService.findAll();
+    return customers;
+  }
 
-    /**
-     * メンバー取得API
-     * @return List<user>
-     */
-    @CrossOrigin
-    @GetMapping(path = "{id}")
-    User getUser(@PathVariable Integer id) {
-        Optional<User> customers = userService.findById(id);
-//        User customers = userService.findById(id);
-        return customers.get();
-    }
+  /*
+    * メンバー取得API
+   * @return List<user>
+   */
+  @CrossOrigin
+  @GetMapping(path = "{id}")
+  User getUser(@PathVariable Integer id) {
+    Optional<User> customers = userService.findById(id);
+    // User customers = userService.findById(id);
+    return customers.get();
+  }
 
-    /**
-     *メンバー登録API
-     * @param user
-     * @return user
-     */
-    @CrossOrigin
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    User postUser(@RequestBody User user) {
-        return userService.create(user);
-    }
+  /*
+   *メンバー登録API
+   * @param user
+   * @return user
+   */
+  @CrossOrigin
+  @PostMapping
+  @ResponseStatus(HttpStatus.CREATED)
+  User postUser(@RequestBody User user) {
+    return userService.create(user);
+  }
 
-    /**
-     * メンバー削除API
-     * @param id
-     */
-    @CrossOrigin
-    @DeleteMapping(path = "{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    void deleteUser(@PathVariable Integer id) {
-        userService.delete(id);
-    }
+  /**
+   * メンバー削除API
+   * @param id
+   */
+  @CrossOrigin
+  @DeleteMapping(path = "{id}")
+  @ResponseStatus(HttpStatus.NO_CONTENT)
+  void deleteUser(@PathVariable Integer id) {
+    userService.delete(id);
+  }
 
-    /**
-     * メンバー更新API
-     * @param id
-     * @param item
-     * @return item
-     */
-    @CrossOrigin
-    @PutMapping(path = "{id}")
-    User putUser(@PathVariable Integer id, @RequestBody User user) {
-        user.setId(id);
-        return userService.update(user);
-    }
-    
+  /**
+   * メンバー更新API
+   * @param id
+   * @param item
+   * @return item
+   */
+  @CrossOrigin
+  @PutMapping(path = "{id}")
+  User putUser(@PathVariable Integer id, @RequestBody User user) {
+    user.setId(id);
+    return userService.update(user);
+  }
 }
