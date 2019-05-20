@@ -9,7 +9,7 @@ import com.example.domain.User;
 
 @Repository //
 public interface UsersRepository extends JpaRepository<User, Integer> {
-    public User findById(int id);
-    public User save(User user);
-    public void deleteById(String id);
+  public User findById(int id);
+  public User save(User user);
+  public void deleteById(String id);
 }
