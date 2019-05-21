@@ -60,7 +60,7 @@ public class UserRestController {
     return userService.create(user);
   }
 
-  /**
+  /*
    * メンバー削除API
    * @param id
    */
@@ -71,7 +71,7 @@ public class UserRestController {
     userService.delete(id);
   }
 
-  /**
+  /*
    * メンバー更新API
    * @param id
    * @param item
