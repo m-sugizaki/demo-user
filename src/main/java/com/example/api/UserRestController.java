@@ -31,7 +31,7 @@ public class UserRestController {
    */
   @CrossOrigin
   @GetMapping
-  public List<User> getUsers() {
+  List<User> getUsers() {
     List<User> customers = userService.findAll();
     return customers;
   }
@@ -42,7 +42,7 @@ public class UserRestController {
    */
   @CrossOrigin
   @GetMapping(path = "{id}")
-  public User getUser(@PathVariable Integer id) {
+  User getUser(@PathVariable Integer id) {
     Optional<User> customers = userService.findById(id);
     // User customers = userService.findById(id);
     return customers.get();
@@ -56,7 +56,7 @@ public class UserRestController {
   @CrossOrigin
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
-  public User postUser(@RequestBody User user) {
+  User postUser(@RequestBody User user) {
     return userService.create(user);
   }
 
@@ -79,7 +79,7 @@ public class UserRestController {
    */
   @CrossOrigin
   @PutMapping(path = "{id}")
-  public User putUser(@PathVariable Integer id, @RequestBody User user) {
+  User putUser(@PathVariable Integer id, @RequestBody User user) {
     user.setId(id);
     return userService.update(user);
   }
