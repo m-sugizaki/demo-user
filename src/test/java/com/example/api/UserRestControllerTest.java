@@ -54,7 +54,7 @@ public class UserRestControllerTest{
       .andExpect(status().isOk())
       .andExpect(content().contentType(APPLICATION_JSON_UTF8))
       .andExpect(jsonPath("id", is(1)))
-      .andExpect(jsonPath("name", is("杉崎")))
+      .andExpect(jsonPath("name", is("杉崎　睦")))
       .andExpect(jsonPath("pass", is("sugisugi")));
   }
 
