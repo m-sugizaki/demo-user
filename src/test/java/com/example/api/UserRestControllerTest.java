@@ -26,50 +26,46 @@ import org.springframework.web.context.WebApplicationContext;
 @SpringBootTest
 @WebAppConfiguration
 public class UserRestControllerTest{
-	
-	public static final MediaType APPLICATION_JSON_UTF8 = new MediaType(MediaType.APPLICATION_JSON.getType(),
-            MediaType.APPLICATION_JSON.getSubtype(),                        
-            Charset.forName("utf8")                     
-    );
-	
 
-	@Autowired
-    protected WebApplicationContext webApplicationContext;
-	
-	protected MockMvc mvc;
+  public static final MediaType APPLICATION_JSON_UTF8 = new MediaType(MediaType.APPLICATION_JSON.getType(),
+    MediaType.APPLICATION_JSON.getSubtype(),                        
+    Charset.forName("utf8")                     
+  );
 
-	@Before
-	public void setUp(){
-		this.mvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
-	}
-	
-	/**
-     * /item/detail/1
-     * @throws Exception
-     */
-    @Test
-    public void メンバー詳細() throws Exception {
-    	
-    	Integer id;
-    	id = 1;
-    	
-    	// 実行し、値を検証
-        mvc.perform(get("/users/{id}", id))
-            .andExpect(status().isOk())
-            .andExpect(content().contentType(APPLICATION_JSON_UTF8))
-            .andExpect(jsonPath("id", is(1)))
-            .andExpect(jsonPath("name", is("杉崎　睦")))
-            .andExpect(jsonPath("pass", is("sugisugi")));
-    }
+  @Autowired
+  protected WebApplicationContext webApplicationContext;
+  protected MockMvc mvc;
 
-    @Test
-    public void メンバー一覧() throws Exception {
-    	// 実行し、値を検証
-        mvc.perform(get("/users/"))
-            .andExpect(status().isOk());
-//            .andExpect(content().contentType(APPLICATION_JSON_UTF8))
-//            .andExpect(jsonPath("id", is(1)))
-//            .andExpect(jsonPath("name", is("杉崎　睦")))
-//            .andExpect(jsonPath("pass", is("sugisugi")));
+  @Before
+  public void setUp(){
+    this.mvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+  }
+
+  /*
+   * /item/detail/1
+   * @throws Exception
+   */
+  @Test
+  public void メンバー詳細() throws Exception {
+    Integer id;
+    id = 1;
+    // 実行し、値を検証
+    mvc.perform(get("/users/{id}", id))
+      .andExpect(status().isOk())
+      .andExpect(content().contentType(APPLICATION_JSON_UTF8))
+      .andExpect(jsonPath("id", is(1)))
+      .andExpect(jsonPath("name", is("杉崎")))
+      .andExpect(jsonPath("pass", is("sugisugi")));
+  }
+
+  @Test
+  public void メンバー一覧() throws Exception {
+  // 実行し、値を検証
+    mvc.perform(get("/users/"))
+      .andExpect(status().isOk());
+      // .andExpect(content().contentType(APPLICATION_JSON_UTF8))
+      // .andExpect(jsonPath("id", is(1)))
+      // .andExpect(jsonPath("name", is("杉崎　睦")))
+      // .andExpect(jsonPath("pass", is("sugisugi")));
     }
 }
