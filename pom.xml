@@ -114,7 +114,8 @@
        			<version>3.0.5</version>
            		<configuration>
                		<xmlOutput>true</xmlOutput>
-               		<xmlOutputDirectory>target/site</xmlOutputDirectory>
+               		<xmlOutputDirectory>target/site/findgubs</xmlOutputDirectory>
+					<findbugsXmlOutputDirectory>target/site/findbugs</findbugsXmlOutputDirectory>
            		</configuration>
        		</plugin>
 
@@ -131,6 +132,7 @@
         			<configLocation>google_checks.xml</configLocation>
         			<failOnViolation>false</failOnViolation>
         			<enableFilesSummary>false</enableFilesSummary>
+					<outputFile>target/site/checkstyle/checkstyle-result.xml</outputFile>
       			</configuration>
 	            <reportSets>
     	            <reportSet>
