@@ -28,7 +28,7 @@ public class UserService {
   }
 
   /*
-    *  メンバー取得サービス
+    *  メンバー詳細取得サービス
    * @return List<user>
    */
   @CrossOrigin
