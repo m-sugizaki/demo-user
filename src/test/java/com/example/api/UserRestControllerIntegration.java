@@ -13,7 +13,7 @@ public class UserRestControllerIntegration {
 	private static String putJson = "{\"id\": 9, \"name\": \"Update Taro\", \"pass\": \"updatetaro\"}";
 	
     @Test
-    public void メンバー一覧test() {
+    public void メンバー一覧() {
         // RestAssured.baseURI = "http://localhost:8081";
         RestAssured.baseURI = "http://13.115.40.246:8081";
         given()
@@ -22,9 +22,9 @@ public class UserRestControllerIntegration {
         	.body("id[0]", equalTo(1))
         	.body("name[0]", equalTo("杉崎　睦"))
         	.body("pass[0]", equalTo("sugisugi"))
-        	.body("id[1]", equalTo(2))
-        	.body("name[1]", equalTo("中森健"))
-        	.body("pass[1]", equalTo("01234567"))
+        	// .body("id[1]", equalTo(2))
+        	// .body("name[1]", equalTo("中森健"))
+        	// .body("pass[1]", equalTo("01234567"))
         	// .log().body()
         ;
     }
