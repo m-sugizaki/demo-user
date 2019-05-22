@@ -7,7 +7,7 @@ import static io.restassured.matcher.ResponseAwareMatcher.*;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
-public class UserRestControllerIntegrationTest {
+public class UserRestControllerIntegration {
 
 	private static String postJson = "{\"id\": 9, \"name\": \"Test Taro\", \"pass\": \"testtaro\"}";
 	private static String putJson = "{\"id\": 9, \"name\": \"Update Taro\", \"pass\": \"updatetaro\"}";
