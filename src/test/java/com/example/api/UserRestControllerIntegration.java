@@ -13,7 +13,7 @@ public class UserRestControllerIntegration {
 	private static String putJson = "{\"id\": 9, \"name\": \"Update Taro\", \"pass\": \"updatetaro\"}";
 	
     @Test
-    public void メンバー一覧() {
+    public void メンバーの一覧() {
         // RestAssured.baseURI = "http://localhost:8081";
         RestAssured.baseURI = "http://13.115.40.246:8081";
         given()
