@@ -19,7 +19,7 @@ public class UserService {
   UsersRepository usersRepository;
 
   /*
-   *  メンバー一覧取得サービス
+   *  メンバー一覧の取得サービス
    * @return List<user>
    */
   @CrossOrigin
