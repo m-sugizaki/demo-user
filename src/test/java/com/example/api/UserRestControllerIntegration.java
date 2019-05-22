@@ -7,13 +7,14 @@ import static io.restassured.matcher.ResponseAwareMatcher.*;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
-public class UserRestControllerIntegrationTest {
+public class UserRestControllerIntegration {
 
 	private static String postJson = "{\"id\": 9, \"name\": \"Test Taro\", \"pass\": \"testtaro\"}";
 	private static String putJson = "{\"id\": 9, \"name\": \"Update Taro\", \"pass\": \"updatetaro\"}";
 	
     @Test
     public void メンバー一覧() {
+        // RestAssured.baseURI = "http://localhost:8081";
         RestAssured.baseURI = "http://13.115.40.246:8081";
         given()
         .get("/users/")
@@ -30,6 +31,7 @@ public class UserRestControllerIntegrationTest {
 
     @Test
     public void メンバー詳細() {
+        // RestAssured.baseURI = "http://localhost:8081";
         RestAssured.baseURI = "http://13.115.40.246:8081";
         given()
         .get("/users/1")
@@ -43,6 +45,7 @@ public class UserRestControllerIntegrationTest {
 
     @Test
     public void メンバー登録() {
+        // RestAssured.baseURI = "http://localhost:8081";
         RestAssured.baseURI = "http://13.115.40.246:8081";
         given()
         .contentType("application/json\r\n")
@@ -58,7 +61,8 @@ public class UserRestControllerIntegrationTest {
 
     @Test
     public void メンバー更新() {
-        RestAssured.baseURI = "http://13.115.40.246:8081";
+        // RestAssured.baseURI = "http://localhost:8081";
+    	RestAssured.baseURI = "http://13.115.40.246:8081";
         given()
         .contentType("application/json\r\n")
         .body(putJson) // Request Body の設定
@@ -73,6 +77,7 @@ public class UserRestControllerIntegrationTest {
 
     @Test
     public void メンバー削除() {
+        // RestAssured.baseURI = "http://localhost:8081";
         RestAssured.baseURI = "http://13.115.40.246:8081";
         given()
         .contentType("application/json\r\n")
