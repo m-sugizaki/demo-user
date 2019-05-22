@@ -22,9 +22,9 @@ public class UserRestControllerIntegration {
         	.body("id[0]", equalTo(1))
         	.body("name[0]", equalTo("杉崎　睦"))
         	.body("pass[0]", equalTo("sugisugi"))
-        	// .body("id[1]", equalTo(2))
-        	// .body("name[1]", equalTo("中森健"))
-        	// .body("pass[1]", equalTo("01234567"))
+        	.body("id[1]", equalTo(2))
+        	.body("name[1]", equalTo("中森健"))
+        	.body("pass[1]", equalTo("01234567"))
         	// .log().body()
         ;
     }
