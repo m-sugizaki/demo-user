@@ -3,14 +3,15 @@ package com.example.service;
 import java.util.List;
 import java.util.Optional;
 
-//CORS
-import org.springframework.web.bind.annotation.CrossOrigin;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.example.domain.User;
 import com.example.repository.UsersRepository;
+//CORS
+import org.springframework.web.bind.annotation.CrossOrigin;
+
+
 
 @Service
 @Transactional
