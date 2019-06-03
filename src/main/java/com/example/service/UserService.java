@@ -20,7 +20,7 @@ public class UserService {
   UsersRepository usersRepository;
 
   /*
-   *  メンバー一覧取得サービス
+   *  メンバーの一覧取得サービス
    * @return List<user>
    */
   @CrossOrigin
@@ -29,7 +29,7 @@ public class UserService {
   }
 
   /*
-    *  メンバー詳細取得サービス
+    *  メンバーの詳細取得サービス
    * @return List<user>
    */
   @CrossOrigin

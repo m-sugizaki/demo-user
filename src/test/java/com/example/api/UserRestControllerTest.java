@@ -2,6 +2,7 @@ package com.example.api;
 
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -21,6 +22,9 @@ import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
+
+import com.example.domain.User;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
@@ -68,4 +72,24 @@ public class UserRestControllerTest{
       // .andExpect(jsonPath("name", is("杉崎　睦")))
       // .andExpect(jsonPath("pass", is("sugisugi")));
     }
+/*
+  @Test
+  public void メンバー登録() throws Exception {
+    User user= new User();
+    user.setId(99);	
+    user.setName("Unit Taro");	
+    user.setPass("unittaro");	
+
+    ObjectMapper mapper = new ObjectMapper();
+    String jsonStr = mapper.writerWithDefaultPrettyPrinter()
+            .writeValueAsString(user);
+  
+    mvc.perform(
+            post("/users/").contentType(MediaType.APPLICATION_JSON).content(
+                    jsonStr.getBytes()))
+            .andExpect(jsonPath("$.userId").value(user.getId()))
+            .andExpect(jsonPath("$.userName").value(user.getName()))
+            .andExpect(jsonPath("$.userPass").value(user.getPass()));
+  }
+ */
 }
