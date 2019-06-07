@@ -53,7 +53,7 @@ public class UserRestControllerTest{
   public void メンバー詳細() throws Exception {
     Integer id;
     id = 1;
-    // 実行し、値を検証
+    // 詳細の値を検証
     mvc.perform(get("/users/{id}", id))
       .andExpect(status().isOk())
       .andExpect(content().contentType(APPLICATION_JSON_UTF8))
