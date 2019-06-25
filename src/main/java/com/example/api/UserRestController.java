@@ -26,7 +26,7 @@ public class UserRestController {
   UserService userService;
     
   /*
-   * メンバー一覧取得API
+   * メンバー一覧取得用API
    * @return List<user>
    */
   @CrossOrigin
@@ -37,7 +37,7 @@ public class UserRestController {
   }
 
   /*
-    * メンバー取得API
+    * メンバー取得用API
    * @return List<user>
    */
   @CrossOrigin
@@ -49,7 +49,7 @@ public class UserRestController {
   }
 
   /*
-   *メンバー登録API
+   *メンバー登録用API
    * @param user
    * @return user
    */
@@ -61,7 +61,7 @@ public class UserRestController {
   }
 
   /*
-   * メンバー削除API
+   * メンバー削除用API
    * @param id
    */
   @CrossOrigin
@@ -72,7 +72,7 @@ public class UserRestController {
   }
 
   /*
-   * メンバー更新API
+   * メンバー更新用API
    * @param id
    * @param item
    * @return item
