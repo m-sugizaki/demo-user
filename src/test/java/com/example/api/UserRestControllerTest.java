@@ -60,7 +60,7 @@ public class UserRestControllerTest{
       .andExpect(jsonPath("id", is(1)))
       .andExpect(jsonPath("name", is("杉崎　睦")))
       .andExpect(jsonPath("pass", is("sugisugi")));
-      // .andExpect(jsonPath("pass", is("sugisug")));
+      // .andExpect(jsonPath("pass", is("sugi")));
   }
 
   @Test
