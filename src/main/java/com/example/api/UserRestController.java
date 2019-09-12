@@ -26,7 +26,7 @@ public class UserRestController {
   UserService userService;
     
   /*
-    * メンバー一覧取得用API
+     * メンバー一覧取得用API
    * @return List<user>
    */
   @CrossOrigin
