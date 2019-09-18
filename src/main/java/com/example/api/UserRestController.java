@@ -25,10 +25,10 @@ public class UserRestController {
   @Autowired
   UserService userService;
     
-  /*
-   * メンバー一覧取得用API
-   * @return List<user>
-   */
+/*
+ * メンバー一覧取得用API
+ * @return List<user>
+ */
   @CrossOrigin
   @GetMapping
   List<User> getUsers() {
